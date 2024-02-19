@@ -194,7 +194,7 @@ class AdversarialExamples:
         y = np.concatenate((np.zeros(n_samples), np.ones(n_samples)))
 
         model = PrincipalComponentAnalysis(n_components=1)
-        X_transformed = model.fit_transform(X)
+        X_transformed = model.fit(X).transform(X)
 
         return X_transformed, y
 
