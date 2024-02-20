@@ -112,10 +112,6 @@ class LinearDiscriminantAnalysis:
             Xclass = X[y == yc]
             Sw += np.cov(Xclass.T)
 
-        #  1. Compute the center of the data, m
-        #  2. Compute the center of individual classes, mc.
-        #  3. Compute the variance of mc over all classes with m as the center, namely \sum (mc - m)(mc - m)^T
-        # mu = X.mean(axis=0)
         for i, yc in enumerate(yclass):
             mc = X[y == yc].mean(axis=0)
             Sb += np.outer((mc - self.mean), (mc - self.mean).T)
@@ -183,10 +179,10 @@ class AdversarialExamples:
             Cluster IDs. y[i] is the cluster ID of the i-th sample.
 
         """
-        mean1 = [3, 10]
-        cov1 = [[6, -3], [-3, 3.5]]
-        mean2 = [1, 3]
-        cov2 = [[0, 1], [2, 2]]
+        mean1 = np.array([10, 10])
+        mean2 = np.array([1, 3])
+        cov1 = np.array([[20, 0], [0, 20]])
+        cov2 = np.array([[0, 1], [2, 2]])
 
         X1 = np.random.multivariate_normal(mean1, cov1, n_samples)
         X2 = np.random.multivariate_normal(mean2, cov2, n_samples)
