@@ -179,13 +179,20 @@ class AdversarialExamples:
             Cluster IDs. y[i] is the cluster ID of the i-th sample.
 
         """
-        mean1 = np.array([0, 0])
-        mean2 = np.array([8, 10])
-        cov1 = np.array([[2, 0.5], [0.5, 2]])
-        cov2 = np.array([[3, 0.2], [0.2, 3]])
+        from sklearn.datasets import make_circles
 
-        X1 = np.random.multivariate_normal(mean1, cov1, n_samples)
-        X2 = np.random.multivariate_normal(mean2, cov2, n_samples)
+        # mean1 = np.array([0, 0])
+        # mean2 = np.array([8, 10])
+        # cov1 = np.array([[2, 0.5], [0.5, 2]])
+        # cov2 = np.array([[3, 0.2], [0.2, 3]])
+
+        # X1 = np.random.multivariate_normal(mean1, cov1, n_samples)
+        # X2 = np.random.multivariate_normal(mean2, cov2, n_samples)
+        # X = np.concatenate((X1, X2))
+        # y = np.concatenate((np.zeros(n_samples), np.ones(n_samples)))
+
+        X1 = make_circles(n_samples=n_samples, factor=0.8)
+        X2 = make_circles(n_samples=n_samples, factor=0.5)
         X = np.concatenate((X1, X2))
         y = np.concatenate((np.zeros(n_samples), np.ones(n_samples)))
 
