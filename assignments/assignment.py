@@ -181,8 +181,8 @@ class AdversarialExamples:
         """
         mean1 = np.array([0, 0])
         mean2 = np.array([8, 10])
-        cov1 = np.array([[0.5, 0], [0, 1]])
-        cov2 = np.array([[3, 0.2], [0.2, 4]])
+        cov1 = np.array([[2, 0.5], [0.5, 2]])
+        cov2 = np.array([[3, 0.2], [0.2, 3]])
 
         X1 = np.random.multivariate_normal(mean1, cov1, n_samples)
         X2 = np.random.multivariate_normal(mean2, cov2, n_samples)
