@@ -179,10 +179,10 @@ class AdversarialExamples:
             Cluster IDs. y[i] is the cluster ID of the i-th sample.
 
         """
-        mean1 = np.array([10, 10])
-        mean2 = np.array([1, 3])
-        cov1 = np.array([[20, 0], [0, 20]])
-        cov2 = np.array([[0, 1], [2, 2]])
+        mean1 = np.array([0, 0])
+        mean2 = np.array([5, 7])
+        cov1 = np.array([[1, 0.5], [0.5, 2]])
+        cov2 = np.array([[2, 0.2], [0.2, 3]])
 
         X1 = np.random.multivariate_normal(mean1, cov1, n_samples)
         X2 = np.random.multivariate_normal(mean2, cov2, n_samples)
